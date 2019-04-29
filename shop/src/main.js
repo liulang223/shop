@@ -8,8 +8,8 @@ Vue.config.productionTip = false
 // import Vant from 'vant';
 // import 'vant/lib/index.css'; 
 // Vue.use(Vant);
-import { Button, Icon, NavBar, Tabbar, TabbarItem } from 'vant';
-Vue.use(Button).use(NavBar).use(Icon).use(Tabbar).use(TabbarItem)
+import { Button, Icon, NavBar, Tabbar, TabbarItem,Swipe, SwipeItem,Lazyload } from 'vant';
+Vue.use(Button).use(NavBar).use(Icon).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload )
 new Vue({
   router,
   store,
