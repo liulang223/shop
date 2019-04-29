@@ -14,14 +14,15 @@
 </div>
 
 <!--热门商品-->
-<div>
-
+<div class='hot'>
+  <p>热门商品</p>
 </div>
 </div>
 </template>
 
 <script>
-
+import Vue from 'vue'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 
 export default {
@@ -42,6 +43,10 @@ export default {
         }   
       ]
     }
+  },
+  components: {
+    swiper,
+    swiperSlide
   }
 }
 </script>
