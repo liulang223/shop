@@ -9,8 +9,8 @@ Vue.config.productionTip = false
 // import 'vant/lib/index.css'; 
 // Vue.use(Vant);
 
-import { Button, Icon, NavBar, Tabbar, TabbarItem,Swipe, SwipeItem,Lazyload } from 'vant';
-Vue.use(Button).use(NavBar).use(Icon).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload)
+import {Toast,CellGroup,Field,Tab, Tabs, Button, Icon, NavBar, Tabbar, TabbarItem,Swipe, SwipeItem,Lazyload } from 'vant';
+Vue.use(Toast).use(CellGroup).use(Field).use(Tab).use(Tabs).use(Button).use(NavBar).use(Icon).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload)
 
 import '@/mock/mock.js';
 
