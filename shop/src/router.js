@@ -1,6 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+// import Home from './views/Home.vue'
+// import Category from './views/Category.vue'
+// import Cart from './views/Cart.vue'
+// import Profile from './views/Profile.vue'
+let Home = ()=> import('./views/Home.vue');
+let Category = ()=> import('./views/Category.vue');
+let Cart = ()=> import('./views/Cart.vue');
+let Profile = ()=> import('./views/Profile.vue');
+
+import Ajax from './views/Ajax.vue'
+import Detail from './views/Detail.vue'
+import FooterBar from './components/FooterBar.vue'
+import Error from './views/Error.vue'
 
 Vue.use(Router)
 
@@ -9,31 +21,58 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
-    },
-    {
-      path: '/cart',
-      name: 'cart',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Cart.vue')
-    },
-    {
+      // component: Home
+      components: {
+        default: Home,
+        'footer-bar': FooterBar
+      },
+      meta:{
+        keepAlive: true
+      }
+    }, {
       path: '/category',
       name: 'category',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Category.vue')
-    },
-    {
+      // component: Category
+      components: {
+        default: Category,
+        'footer-bar': FooterBar
+      }, 
+      meta:{
+        keepAlive: true
+      }
+    }, {
+      path: '/cart',
+      name: 'cart',
+      // component: Cart
+      components: {
+        default: Cart,
+        'footer-bar': FooterBar
+      },
+      meta:{
+        keepAlive: true
+      }
+    }, {
       path: '/profile',
       name: 'profile',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Profile.vue')
+      component: Profile,
+      components: {
+        default: Profile,
+        'footer-bar': FooterBar
+      },
+      meta:{
+        keepAlive: false
+      }
+    }, {
+      path: '/ajax',
+      name: 'ajax',
+      component: Ajax
+    }, {
+      path: '/detail/:id',
+      name: 'detail',
+      component: Detail
+    }, {
+      path: '*',
+      component: Error
     }
   ]
 })
