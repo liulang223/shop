@@ -8,7 +8,7 @@
         </div>
     </van-card>
     </div>
-   
+    <van-submit-bar class="submit-bar" :price="totalPrice" button-text="提交订单" @submit="onSubmit" />
   </div>
 </template>
 
