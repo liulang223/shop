@@ -8,12 +8,14 @@
         </div>
     </van-card>
     </div>
-    <van-submit-bar class="submit-bar" :price="totalPrice" button-text="提交订单" @submit="onSubmit" />
+   
   </div>
 </template>
 
 <script>
-
+import { mapState } from "vuex";
+import axios from "axios";
+import url from "@/service.config.js";
 export default {
   data() {
     return {
