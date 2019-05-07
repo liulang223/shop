@@ -13,9 +13,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import axios from "axios";
-import url from "@/service.config.js";
+
 export default {
   data() {
     return {
