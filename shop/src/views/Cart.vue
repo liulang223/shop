@@ -25,7 +25,7 @@ export default {
   computed: {
     ...mapState(["userInfo"]),
     totalPrice(){
-        return this.pruductList.reduce((sum, elem)=>{
+        return this.pruductList.reduce((sum,elem)=>{
             sum += elem.price;
             return sum;
         }, 0) * 10 * 10;
